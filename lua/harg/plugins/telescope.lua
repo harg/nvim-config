@@ -29,6 +29,9 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "smart" },
+        preview = {                                                                                                                                                                          
+          hide_on_startup = true -- hide previewer when picker starts
+        },
         prompt_prefix = "❯ ",
         selection_caret = "❯ ",
         file_ignore_patterns = {
