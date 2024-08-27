@@ -2,6 +2,20 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
 
+-- copy / paste with system clipboard
+keymap.set("v", "<C-Insert>", "\"+ygv<Esc>", { desc = "Copy to system clipboard" }) -- copy to system clipboard
+keymap.set("v", "<C-c>", "\"+ygv<Esc>", { desc = "Copy to system clipboard" }) -- copy to system clipboard
+keymap.set("!", "<S-Insert>", "<C-R>+", { desc = "Paste from system clipboard" }) -- paste from system clipboard
+keymap.set("i", "<C-v>", "<C-R>+", { desc = "Paste from system clipboard" }) -- paste from system clipboard
+keymap.set("v", "<C-v>", "\"+pgv<Esc>", { desc = "Paste from system clipboard" }) -- paste from system clipboard
+keymap.set("v", "<C-x>", "\"+x", { desc = "Cut from system clipboard" }) -- cut to system clipboard
+keymap.set("v", "<S-Del>", "\"+x", { desc = "Cut from system clipboard" }) -- cut to system clipboard
+
+-- save...
+keymap.set("n", "<C-S>", ":update<CR>", { noremap = true, desc = "Save current buffer" }) -- save current buffer
+keymap.set("v", "<C-S>", "<C-C>:update<CR>", { noremap = true, desc = "Save current buffer" }) -- save current buffer
+keymap.set("i", "<C-S>", "<Esc>:update<CR>gi", { noremap = true, desc = "Save current buffer" }) -- save current buffer
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
