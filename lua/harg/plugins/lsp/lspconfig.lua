@@ -88,7 +88,7 @@ return {
 
 
     -- local lspservers =  {"tsserver", "html", "cssls", "tailwindcss", "emmet_ls", "gopls"}
-    local lspservers =  {"tsserver", "gopls"}
+    local lspservers =  {"ts_ls", "gopls"}
     for i, v in ipairs(lspservers) do
       lspconfig[v].setup({
         capabilities = capabilities,
